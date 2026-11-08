@@ -1,0 +1,31 @@
+---
+description: >-
+  Feature implementation workflow. Confirms requirements, inspects existing
+  architecture, presents an implementation plan, implements incrementally
+  following project conventions, writes tests. Use when asked to add or
+  implement a feature.
+alwaysApply: false
+---
+
+# Feature Development Workflow
+
+## Prerequisites
+- `ai-dev-starter/core/safety-policy.md`
+- `.agents/project-context.md`
+- Relevant `ai-dev-starter/standards/` files for detected tech stack.
+
+## Execution Sequence
+
+1. **Confirm requirements:** What, who, where, constraints. Max 3 clarifying questions.
+2. **Inspect architecture:** Read directory structure, similar features, routing, models, test conventions.
+3. **Present plan:** Files to create, files to modify, dependencies introduced, breaking changes.
+4. **Wait for approval** before writing any files.
+5. **Implement incrementally:** schema → model → service → controller/route → frontend → tests.
+6. **Follow conventions:** Match existing naming, imports, error handling, validation patterns exactly.
+7. **Run tests:** Report actual output.
+
+## Constraints
+- Plan must be approved before writing files.
+- No new dependencies without approval.
+- No scope creep. No unrelated improvements.
+- No auto-commit.

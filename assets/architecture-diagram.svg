@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%" style="background:#0d1117; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b176f2" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161b22" />
+      <stop offset="100%" stop-color="#0e131a" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle -->
+  <text x="500" y="55" text-anchor="middle" font-size="26" font-weight="800" fill="#f0f6fc" letter-spacing="1">
+    AI-DEV-STARTER ARCHITECTURE &amp; WORKFLOW
+  </text>
+  <text x="500" y="85" text-anchor="middle" font-size="14" fill="#8b949e">
+    Zero-Config Standardized AI Coding, Native Stack Context &amp; Auto Self-Review
+  </text>
+
+  <!-- Flow Connector Lines -->
+  <path d="M 190 240 L 250 240" stroke="#30363d" stroke-width="3" stroke-dasharray="6,6" />
+  <polygon points="255,240 245,235 245,245" fill="#58a6ff" />
+
+  <path d="M 430 240 L 490 240" stroke="#30363d" stroke-width="3" stroke-dasharray="6,6" />
+  <polygon points="495,240 485,235 485,245" fill="#b176f2" />
+
+  <path d="M 670 240 L 730 240" stroke="#30363d" stroke-width="3" stroke-dasharray="6,6" />
+  <polygon points="735,240 725,235 725,245" fill="#10b981" />
+
+  <!-- Feedback Loop (Arrow going back if P0/P1 detected) -->
+  <path d="M 580 345 C 580 410, 340 410, 340 345" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="4,4" />
+  <polygon points="340,340 335,350 345,350" fill="#f85149" />
+  <text x="460" y="425" text-anchor="middle" font-size="12" font-weight="600" fill="#f85149">
+    Auto-Rectify if P0 / P1 Finding Detected
+  </text>
+
+  <!-- Box 1: Developer Intent -->
+  <g transform="translate(40, 135)">
+    <rect width="160" height="210" rx="12" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1.5" />
+    <circle cx="80" cy="45" r="24" fill="#1f2937" stroke="#58a6ff" stroke-width="2" />
+    <text x="80" y="52" text-anchor="middle" font-size="20">👨‍💻</text>
+    <text x="80" y="105" text-anchor="middle" font-size="16" font-weight="700" fill="#f0f6fc">Dev Prompt</text>
+    <text x="80" y="130" text-anchor="middle" font-size="12" fill="#8b949e">Feature / Bug Fix</text>
+    <text x="80" y="150" text-anchor="middle" font-size="12" fill="#8b949e">Refactor / Audit</text>
+    <rect x="20" y="175" width="120" height="28" rx="6" fill="#21262d" />
+    <text x="80" y="193" text-anchor="middle" font-size="11" fill="#58a6ff" font-weight="600">IDE Chat / Slash</text>
+  </g>
+
+  <!-- Box 2: Context & Rules Injection -->
+  <g transform="translate(260, 135)">
+    <rect width="180" height="210" rx="12" fill="url(#cardGrad)" stroke="#388bfd" stroke-width="1.5" />
+    <circle cx="90" cy="45" r="24" fill="#1f2937" stroke="#58a6ff" stroke-width="2" />
+    <text x="90" y="52" text-anchor="middle" font-size="20">⚡</text>
+    <text x="90" y="105" text-anchor="middle" font-size="16" font-weight="700" fill="#f0f6fc">ai-dev-starter</text>
+    <text x="90" y="125" text-anchor="middle" font-size="12" fill="#58a6ff" font-weight="600">Auto-Detect Stack</text>
+    <text x="90" y="148" text-anchor="middle" font-size="11" fill="#8b949e">• Next / React / Laravel</text>
+    <text x="90" y="166" text-anchor="middle" font-size="11" fill="#8b949e">• Python / Node / DB</text>
+    <text x="90" y="184" text-anchor="middle" font-size="11" fill="#8b949e">• Test Suite &amp; Linters</text>
+  </g>
+
+  <!-- Box 3: Native AI Execution + Self Review -->
+  <g transform="translate(500, 135)">
+    <rect width="180" height="210" rx="12" fill="url(#cardGrad)" stroke="#a371f7" stroke-width="1.5" />
+    <circle cx="90" cy="45" r="24" fill="#1f2937" stroke="#b176f2" stroke-width="2" />
+    <text x="90" y="52" text-anchor="middle" font-size="20">🛡️</text>
+    <text x="90" y="105" text-anchor="middle" font-size="16" font-weight="700" fill="#f0f6fc">Auto Self-Review</text>
+    <text x="90" y="125" text-anchor="middle" font-size="12" fill="#b176f2" font-weight="600">Git Diff Audit</text>
+    <text x="90" y="148" text-anchor="middle" font-size="11" fill="#f85149" font-weight="600">P0 Security / Crash</text>
+    <text x="90" y="166" text-anchor="middle" font-size="11" fill="#d29922" font-weight="600">P1 Bugs &amp; Logic</text>
+    <text x="90" y="184" text-anchor="middle" font-size="11" fill="#58a6ff" font-weight="600">P2 Perf &amp; P3 Style</text>
+  </g>
+
+  <!-- Box 4: Production-Ready Code -->
+  <g transform="translate(740, 135)">
+    <rect width="180" height="210" rx="12" fill="url(#cardGrad)" stroke="#238636" stroke-width="1.5" />
+    <circle cx="90" cy="45" r="24" fill="#1f2937" stroke="#10b981" stroke-width="2" />
+    <text x="90" y="52" text-anchor="middle" font-size="20">🚀</text>
+    <text x="90" y="105" text-anchor="middle" font-size="16" font-weight="700" fill="#f0f6fc">Verified Output</text>
+    <text x="90" y="125" text-anchor="middle" font-size="12" fill="#10b981" font-weight="600">Zero Regressions</text>
+    <text x="90" y="148" text-anchor="middle" font-size="11" fill="#8b949e">• Tested Implementation</text>
+    <text x="90" y="166" text-anchor="middle" font-size="11" fill="#8b949e">• Clean Diff &amp; Types</text>
+    <text x="90" y="184" text-anchor="middle" font-size="11" fill="#8b949e">• Safe to Commit</text>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(200, 440)">
+    <text x="300" y="18" text-anchor="middle" font-size="13" fill="#8b949e">
+      Compatible with <tspan fill="#58a6ff" font-weight="700">Google Antigravity</tspan> &amp; <tspan fill="#b176f2" font-weight="700">Cursor</tspan> • 100% Native &amp; Zero Runtime Dependencies
+    </text>
+  </g>
+</svg>

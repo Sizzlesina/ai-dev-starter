@@ -1,0 +1,38 @@
+---
+description: >-
+  Bug investigation and fix workflow. Establishes evidence of the bug,
+  identifies root cause, proposes minimal fix, implements only after user
+  approval, runs tests. Use when user shares error message, stack trace,
+  or describes unexpected behavior.
+alwaysApply: false
+---
+
+# Bug Fix Workflow
+
+## Prerequisites
+- `ai-dev-starter/core/safety-policy.md`
+- `.agents/project-context.md`
+
+## Execution Sequence
+
+1. **Understand report:** Error message, expected vs actual behavior, reproduction steps.
+2. **Establish evidence:** Search source for error patterns, trace the call path.
+3. **Identify root cause:** Trace entry point → function chain → specific line.
+4. **Identify scope:** What other callers are affected? What tests cover it?
+5. **Propose fix:** Present plan in this format:
+   ```
+   Root Cause: <one sentence>
+   Fix Scope: path/to/file.ext lines X–Y
+   Change: <before/after code>
+   Side Effects: <none / describe>
+   Tests to run: <command>
+   Shall I implement this fix?
+   ```
+6. **Wait for explicit approval** before writing any files.
+7. **Implement:** Minimal change only.
+8. **Run tests and report actual output.**
+
+## Constraints
+- Never implement without user approval.
+- Minimal change only — no unrelated improvements.
+- No auto-commit.

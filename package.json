@@ -1,0 +1,50 @@
+{
+  "name": "ai-dev-starter",
+  "version": "1.0.1",
+  "description": "Universal AI Development Starter Kit for Google Antigravity, Cursor, and modern AI coding IDEs. Production-quality workflows for code review, bug fixing, refactoring, and security auditing without separate LLM API keys.",
+  "main": "scripts/ai-dev-starter.js",
+  "bin": {
+    "ai-dev-starter": "bin/ai-dev-starter.js"
+  },
+  "files": [
+    "core",
+    "workflows",
+    "standards",
+    "adapters",
+    "templates",
+    "scripts",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sizzlesina/ai-dev-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sizzlesina/ai-dev-starter/issues"
+  },
+  "homepage": "https://github.com/Sizzlesina/ai-dev-starter#readme",
+  "scripts": {
+    "test": "node tests/test-installer.js"
+  },
+  "keywords": [
+    "antigravity",
+    "cursor",
+    "ai-agent",
+    "agent-skills",
+    "skills",
+    "code-review",
+    "pr-agent",
+    "vibe-coding",
+    "workflows",
+    "security-audit",
+    "developer-experience"
+  ],
+  "author": "AI Dev Starter Contributors",
+  "license": "MIT"
+}

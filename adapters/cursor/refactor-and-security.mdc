@@ -1,0 +1,50 @@
+---
+description: >-
+  Refactoring workflow. Improves code structure without changing behavior.
+  Checks test coverage first, presents plan, implements step by step, verifies
+  tests pass after each step. Use for "refactor", "clean up", "simplify".
+alwaysApply: false
+---
+
+# Refactor Workflow
+
+## Execution Sequence
+
+1. **Understand scope:** Which file/module. What quality problem.
+2. **Check test coverage:** Run tests. If none exist, warn and offer to generate tests first.
+3. **Identify improvements:** Long methods, deep nesting, duplication, god classes, magic values, dead code.
+4. **Present plan:** Problems found + proposed changes + "behavior preserved: yes/no".
+5. **Wait for approval.**
+6. **Implement step by step:** Run tests after each step. Stop and revert if any test fails.
+
+## Constraints
+- Stop immediately if any test fails.
+- No feature additions.
+- No API changes.
+- No formatting outside changed functions.
+---
+description: >-
+  Security audit workflow. Inspects injection, authentication, authorization,
+  sensitive data, mass assignment, CSRF, and file operation vulnerabilities.
+  Read-only. Use for "security audit", "vulnerability check", "بررسی امنیتی".
+alwaysApply: false
+---
+
+# Security Audit Workflow
+
+## Prerequisites
+- `ai-dev-starter/standards/security.md`
+- `.agents/project-context.md`
+
+## Execution Sequence
+
+1. Define scope (full codebase or specific module).
+2. Enumerate attack surface: routes, auth mechanisms, public endpoints.
+3. Inspect six categories: Injection, Auth/AuthZ, Sensitive Data, Mass Assignment, CSRF, File Ops.
+4. For each suspicious pattern: read 50 lines of context + route + middleware.
+5. Verify: file + line + attack path + mitigating factors.
+6. Report findings ordered P0 → P3 with OWASP category.
+
+## Constraints
+- Read-only. No changes.
+- Realistic findings only — must have concrete attack path.

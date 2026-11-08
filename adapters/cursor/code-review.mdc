@@ -1,0 +1,56 @@
+---
+description: >-
+  Structured code review workflow. Reviews Git changes (committed, staged,
+  unstaged) for correctness, security, data integrity, performance, and
+  architecture issues. Evidence-only findings with file/line citations.
+  Use when asked to "review my code", "code review", "بررسی کد".
+alwaysApply: false
+---
+
+# Code Review Workflow
+
+## Prerequisites
+Read these files before starting:
+- `ai-dev-starter/core/git-analysis.md`
+- `ai-dev-starter/core/review-methodology.md`
+- `ai-dev-starter/core/severity-levels.md`
+- `.agents/project-context.md` (if present)
+
+## Execution Sequence
+
+1. **Orient:** Identify current branch and comparison base.
+   ```bash
+   git branch --show-current
+   git remote show origin | grep "HEAD branch"
+   ```
+
+2. **Enumerate:** List all changed files across committed, staged, unstaged.
+   ```bash
+   git diff --name-status origin/main...HEAD
+   git diff --cached --name-status
+   git diff --name-status
+   ```
+
+3. **Read diffs:** `git diff origin/main...HEAD`
+
+4. **Read affected files:** Read full context around changed lines.
+
+5. **Gather supporting context:** Related models, tests, routes, migrations.
+
+6. **Analyze:** Apply all review dimensions in order:
+   - Correctness → Security → Data Integrity → Performance → Architecture → Tests → Quality
+
+7. **Verify each finding:**
+   - [ ] In new code (not pre-existing)?
+   - [ ] Can cite exact file and line?
+   - [ ] Can describe realistic impact?
+   - [ ] Checked for mitigating factors?
+   - [ ] Can suggest concrete fix?
+   Discard any finding that fails this checklist.
+
+8. **Report:** Use template from `ai-dev-starter/templates/review-report.md`.
+   Report in language from `project-context.md` → `report_language` (default: Persian).
+
+## Constraints
+- **Read-only.** No file modifications.
+- **No speculation.** Every finding requires code-level evidence.

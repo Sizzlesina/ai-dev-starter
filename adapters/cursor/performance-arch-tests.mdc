@@ -1,0 +1,57 @@
+---
+description: >-
+  Performance audit and architecture review workflows. Performance: finds N+1
+  queries, missing indexes, unbounded queries, synchronous blocking calls.
+  Architecture: evaluates layer boundaries, coupling, dependencies, scalability.
+  Both read-only. Use for "performance audit", "architecture review".
+alwaysApply: false
+---
+
+# Performance Audit Workflow
+
+## Execution Sequence
+
+1. Define scope and known slow areas.
+2. Database: scan for N+1 (loop + query), missing indexes, unbounded queries, expensive aggregations.
+3. API/HTTP: synchronous external calls, missing caching, large payloads.
+4. Frontend: non-lazy routes, unnecessary re-renders, large bundle imports.
+5. Jobs: large payloads, blocking ops.
+6. Assess each finding: measurable? scale-dependent? evidence?
+7. Report with estimated impact at realistic scale.
+
+## Constraints
+- Read-only. Evidence-supported findings only.
+
+---
+
+# Architecture Review Workflow
+
+## Execution Sequence
+
+1. Map directory structure (depth 3, file counts, largest files).
+2. Identify pattern: MVC / Clean / DDD / Microservices / Component-based.
+3. Evaluate layer boundaries: fat controllers? DB in controllers? Business logic in routes?
+4. Evaluate coupling: import counts, circular dependencies, low cohesion.
+5. Evaluate dependencies: abandoned packages, duplicate purpose packages.
+6. Evaluate scalability: in-process state, missing queues, missing caching.
+7. Report: executive summary → strengths → concerns (with citations) → recommendations.
+
+## Constraints
+- Read-only. Structural findings only. Code-level bugs belong in Code Review.
+
+---
+
+# Test Generation Workflow
+
+## Execution Sequence
+
+1. Identify testing framework from `package.json` / `composer.json` / `pyproject.toml`.
+2. Read one existing test file to learn conventions.
+3. Read target class/module. List all public methods.
+4. Identify test cases: happy path, validation errors, not-found, unauthorized, edge cases.
+5. Present test plan. Wait for approval.
+6. Generate tests following existing conventions. Run them. Report output.
+
+## Constraints
+- Use only existing testing framework. No new test libraries.
+- Run tests and report actual output.
